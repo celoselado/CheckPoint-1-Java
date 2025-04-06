@@ -1,19 +1,24 @@
 package br.com.fiap.main;
 
+//Importação do pacote DespesaFamiliar e do Scanner
 import br.com.fiap.bean.DespesaFamiliar;
 import java.util.Scanner;
 
 // Aluno: Marcelo Alexandre dos Santos RM:565465
-// Aluna: Poliana
-// Aluno: Leonardo
+// Aluna: Poliana Sarmento RM: 565321
+// Aluno: Leonardo Rodrigues RM: 552417
 
+//Classe Main para rodar o código:
 public class Main {
 
+    //Chamando metodo main:
     public static void main(String[] args) {
 
+        //Instanciando o objeto despesaFamiliar e o Scanner
         DespesaFamiliar despesaFamiliar = new DespesaFamiliar();
         Scanner scan = new Scanner(System.in);
 
+        //Criando as váriaveis que irão armazenar os valores antes de atribuí-los aos atributos da classe DespesaFamiliar
         int numeroDeMoradores;
         double rendaFamiliar, gastoComLuz, gastoComAgua, gastoComInternet, valorMensalidadeDaAcademia;
 
@@ -21,6 +26,7 @@ public class Main {
         System.out.println("CALCULADORA RENDA FAMILIAR");
         System.out.println("---------------------------");
 
+        //Imprimindo na tela o pedido para inserir os valores e atribuiundo eles as variáveis.
         System.out.println("Por favor, insira o valor total de renda da sua família:");
         rendaFamiliar = scan.nextDouble();
 
@@ -39,6 +45,7 @@ public class Main {
         System.out.println("Insira o valor da mensalidade da Academia: ");
         valorMensalidadeDaAcademia = scan.nextDouble();
 
+        //Atribuindo os valores das variáveis aos atributos
         despesaFamiliar.rendaFamiliar = rendaFamiliar;
         despesaFamiliar.numeroDeMoradores = numeroDeMoradores;
         despesaFamiliar.gastoComLuz = gastoComLuz;
@@ -46,12 +53,11 @@ public class Main {
         despesaFamiliar.gastoComInternet = gastoComInternet;
         despesaFamiliar.valorMensalidadeDaAcademia = valorMensalidadeDaAcademia;
 
-
-        System.out.println("---------------------------------------");
+        // Imprimindo o valor da Renda TOtal, Total de gastos e Renda Familiar liquida com Print Formatado:
+        System.out.println("----------------------------------------------");
         System.out.printf("A Renda Total da família é de: R$ %.3f\nO total de gastos da família foi: R$ %.3f\nE a Renda Familiar Liquida foi: R$ %.3f\n",
                 despesaFamiliar.rendaFamiliar, despesaFamiliar.calcularTotalDeDespesas(), despesaFamiliar.calcularRendaFamiliarLiquida());
-        System.out.println("---------------------------------------");
-
+        System.out.println("----------------------------------------------");
 
     }
 
