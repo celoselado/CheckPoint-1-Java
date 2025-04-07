@@ -26,38 +26,46 @@ public class Main {
         System.out.println("CALCULADORA RENDA FAMILIAR");
         System.out.println("---------------------------");
 
-        //Imprimindo na tela o pedido para inserir os valores e atribuiundo eles as variáveis.
-        System.out.println("Por favor, insira o valor total de renda da sua família:");
-        rendaFamiliar = scan.nextDouble();
+        // Tratamento de erro, para caso o usuario digite algo que nao seja números ele entrar no catch
+        try{
+            //Imprimindo na tela o pedido para inserir os valores e atribuiundo eles as variáveis.
+            System.out.println("Por favor, insira o valor total de renda da sua família:");
+            rendaFamiliar = scan.nextDouble();
 
-        System.out.println("Digite quantos moradores residem em sua Casa: ");
-        numeroDeMoradores = scan.nextInt();
+            System.out.println("Digite quantos moradores residem em sua Casa: ");
+            numeroDeMoradores = scan.nextInt();
 
-        System.out.println("Digite o total a ser gasto na conta de Luz: ");
-        gastoComLuz = scan.nextDouble();
+            System.out.println("Digite o total a ser gasto na conta de Luz: ");
+            gastoComLuz = scan.nextDouble();
 
-        System.out.println("Digite o total a ser gasto na conta de Água: ");
-        gastoComAgua = scan.nextDouble();
+            System.out.println("Digite o total a ser gasto na conta de Água: ");
+            gastoComAgua = scan.nextDouble();
 
-        System.out.println("Digite o total a ser gasto na conta de Internet: ");
-        gastoComInternet = scan.nextDouble();
+            System.out.println("Digite o total a ser gasto na conta de Internet: ");
+            gastoComInternet = scan.nextDouble();
 
-        System.out.println("Insira o valor da mensalidade da Academia: ");
-        valorMensalidadeDaAcademia = scan.nextDouble();
+            System.out.println("Insira o valor da mensalidade da Academia: ");
+            valorMensalidadeDaAcademia = scan.nextDouble();
 
-        //Atribuindo os valores das variáveis aos atributos
-        despesaFamiliar.rendaFamiliar = rendaFamiliar;
-        despesaFamiliar.numeroDeMoradores = numeroDeMoradores;
-        despesaFamiliar.gastoComLuz = gastoComLuz;
-        despesaFamiliar.gastoComAgua = gastoComAgua;
-        despesaFamiliar.gastoComInternet = gastoComInternet;
-        despesaFamiliar.valorMensalidadeDaAcademia = valorMensalidadeDaAcademia;
+            //Atribuindo os valores das variáveis aos atributos
+            despesaFamiliar.rendaFamiliar = rendaFamiliar;
+            despesaFamiliar.numeroDeMoradores = numeroDeMoradores;
+            despesaFamiliar.gastoComLuz = gastoComLuz;
+            despesaFamiliar.gastoComAgua = gastoComAgua;
+            despesaFamiliar.gastoComInternet = gastoComInternet;
+            despesaFamiliar.valorMensalidadeDaAcademia = valorMensalidadeDaAcademia;
 
-        // Imprimindo o valor da Renda TOtal, Total de gastos e Renda Familiar liquida com Print Formatado:
-        System.out.println("----------------------------------------------");
-        System.out.printf("A Renda Total da família é de: R$ %.3f\nO total de gastos da família foi: R$ %.3f\nE a Renda Familiar Liquida foi: R$ %.3f\n",
-                despesaFamiliar.rendaFamiliar, despesaFamiliar.calcularTotalDeDespesas(), despesaFamiliar.calcularRendaFamiliarLiquida());
-        System.out.println("----------------------------------------------");
+            // Imprimindo o valor da Renda TOtal, Total de gastos e Renda Familiar liquida com Print Formatado:
+            System.out.println("----------------------------------------------");
+            System.out.printf("A Renda Total da família é de: R$ %.3f\nO total de gastos da família foi: R$ %.3f\nE a Renda Familiar Liquida foi: R$ %.3f\n",
+                    despesaFamiliar.rendaFamiliar, despesaFamiliar.calcularTotalDeDespesas(), despesaFamiliar.calcularRendaFamiliarLiquida());
+            System.out.println("----------------------------------------------");
+
+        }catch (Exception e){
+            System.out.println("Digite um valor válido");
+        }
+
+
 
     }
 
