@@ -30,30 +30,22 @@ public class Main {
         try{
             //Imprimindo na tela o pedido para inserir os valores e atribuiundo eles as variáveis.
             System.out.println("Por favor, insira o valor total de renda da sua família:");
-            rendaFamiliar = scan.nextDouble();
+            despesaFamiliar.rendaFamiliar = scan.nextDouble();
 
             System.out.println("Digite quantos moradores residem em sua Casa: ");
-            numeroDeMoradores = scan.nextInt();
+            despesaFamiliar.numeroDeMoradores = scan.nextInt();
 
             System.out.println("Digite o total a ser gasto na conta de Luz: ");
-            gastoComLuz = scan.nextDouble();
+            despesaFamiliar.gastoComLuz = scan.nextDouble();
 
             System.out.println("Digite o total a ser gasto na conta de Água: ");
-            gastoComAgua = scan.nextDouble();
+            despesaFamiliar.gastoComAgua = scan.nextDouble();
 
             System.out.println("Digite o total a ser gasto na conta de Internet: ");
-            gastoComInternet = scan.nextDouble();
+            despesaFamiliar.gastoComInternet = scan.nextDouble();
 
             System.out.println("Insira o valor da mensalidade da Academia: ");
-            valorMensalidadeDaAcademia = scan.nextDouble();
-
-            //Atribuindo os valores das variáveis aos atributos
-            despesaFamiliar.rendaFamiliar = rendaFamiliar;
-            despesaFamiliar.numeroDeMoradores = numeroDeMoradores;
-            despesaFamiliar.gastoComLuz = gastoComLuz;
-            despesaFamiliar.gastoComAgua = gastoComAgua;
-            despesaFamiliar.gastoComInternet = gastoComInternet;
-            despesaFamiliar.valorMensalidadeDaAcademia = valorMensalidadeDaAcademia;
+            despesaFamiliar.valorMensalidadeDaAcademia = scan.nextDouble();
 
             // Imprimindo o valor da Renda TOtal, Total de gastos e Renda Familiar liquida com Print Formatado:
             System.out.println("----------------------------------------------");
@@ -62,7 +54,7 @@ public class Main {
             System.out.println("----------------------------------------------");
 
         }catch (Exception e){
-            System.out.println("Digite um valor válido");
+            System.out.println("Reinicie o programa e digite um número válido!");
         }
 
 
